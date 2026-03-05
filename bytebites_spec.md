@@ -12,8 +12,8 @@
 
 *Four classes that must be modeled based on the client reqs*
 
-1. Customers
+1. Customer
 2. Food 
 3. Item Category (e.g. "Drinks", "Desserts", "Entrees")
-4. Reciept (Transaction)
+4. Transaction
 
