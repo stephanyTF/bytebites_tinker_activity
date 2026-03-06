@@ -120,6 +120,15 @@ end note
   - `get_foods_in_category()`: Returns all items in this category
   - `get_category_name()`: Returns the category name
 
+
+### Menu
+  - **Attributes:**
+    - `food_dict`: A dictionary structured as `{food_id: (name, category)}` mapping each unique food id to its name and category
+
+  - **Methods:**
+    - `filter_food(category_name)`: Returns a list of food items filtered by the specified category name
+
+
 ### Transaction
 - **Attributes:**
   - `transaction_id`: Unique identifier for the transaction
