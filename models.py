@@ -96,11 +96,11 @@ class Menu:
 class Transaction:
     """Represents a customer purchase transaction."""
     
-    def __init__(self, transaction_id, customer):
+    def __init__(self, transaction_id, customer, date=None):
         self.transaction_id = transaction_id
         self.customer = customer
         self.items = []
-        self.timestamp = datetime.now()
+        self.timestamp = date if date else datetime.now()
         self.total_cost = 0.0
     
     def add_item(self, food):
