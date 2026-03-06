@@ -105,7 +105,6 @@ end note
   - `popularity_rating`: Rating indicating how popular the item is
 
 - **Methods:**
-  - `update_price(new_price)`: Updates the price of the food item
   - `get_details()`: Returns formatted food item information
   - `set_rating(rating)`: Updates the popularity rating
 

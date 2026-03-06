@@ -58,14 +58,16 @@ class Food:
         self.category = category
         self.popularity_rating = popularity_rating
     
-    def update_price(self, new_price):
-        """Updates the price of this food item."""
-        self.price = new_price
+    # Note: Not in UML but saved in case needed for future functionality
+    # #def update_price(self, new_price):
+    #     """Updates the price of this food item."""
+    #     self.price = new_price
     
     def get_details(self):
         """Returns formatted food item information."""
         return f"{self.name} - ${self.price:.2f} (Rating: {self.popularity_rating}/5) [Category: {self.category.get_category_name()}]"
     
+
     def set_rating(self, rating):
         """Updates the popularity rating for this food item."""
         self.popularity_rating = rating
