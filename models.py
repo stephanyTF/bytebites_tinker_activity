@@ -73,6 +73,26 @@ class Food:
         self.popularity_rating = rating
 
 
+
+class Menu:
+    """A list that holds all items and lets us filter by category such as "Drinks" or "Desserts"."""
+    def __init__(self):
+        self.food_items = []
+    
+    def add_food_item(self, food):
+        """Adds a food item to the menu."""
+        self.food_items.append(food)
+    
+    
+    def get_foods_by_category(self, category_name):
+        """Returns all food items in a specific category."""
+        return [food for food in self.food_items if food.category.get_category_name() == category_name]
+    
+    def get_all_foods(self):
+        """Returns all food items on the menu."""
+        return self.food_items
+
+
 class Transaction:
     """Represents a customer purchase transaction."""
     
