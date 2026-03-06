@@ -46,9 +46,10 @@ print(f" \n")
 itemCat4 = ItemCategory(4, "Salads")
 food4 = Food(4, "Caesar Salad", 7.99, itemCat4, 4.2)
 food5 = Food(5, "Angus Beef Steak", 21.99, itemCat1, 4.3)
+food6 = Food(6, "Lemonade", 2.99, itemCat3, 4.0)
 menu = Menu()
 
-lst_of_categories = [food1, food2, food3, food4, food5]
+lst_of_categories = [food1, food2, food3, food4, food5, food6]
 for food in lst_of_categories:
     menu.add_food_item(food)
 
@@ -60,4 +61,9 @@ for food in menu.food_items:
 print(f" \n Fifth Case: \n")
 print(" "* 5 + "Foods in 'Main Course' Category:")
 for food in menu.get_foods_by_category("Main Course"):
+    print(" "* 10 + food.get_details())
+
+print(f" \n Sixth Case: \n")
+print(" "* 5 + "Foods in 'Beverages' Category:")
+for food in menu.get_foods_by_category("Beverages"):
     print(" "* 10 + food.get_details())
