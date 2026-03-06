@@ -33,7 +33,7 @@ classDiagram
         +getCategoryId() int
         +getCategoryName() string
     }
-        ''' The itemCategory class is defined by name and ID. Misses a list of foods that belong under its category'''
+        ''' The itemCategory class is defined by name and ID. Missing a list of foods that belong under its category'''
 
 
 
