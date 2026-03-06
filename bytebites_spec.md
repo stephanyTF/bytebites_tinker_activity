@@ -16,4 +16,5 @@
 2. Food 
 3. Item Category (e.g. "Drinks", "Desserts", "Entrees")
 4. Transaction
+5. Menu
 

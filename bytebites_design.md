@@ -120,15 +120,6 @@ end note
   - `get_foods_in_category()`: Returns all items in this category
   - `get_category_name()`: Returns the category name
 
-
-### Menu
-  - **Attributes:**
-    - `food_dict`: A dictionary structured as `{food_id: (name, category)}` mapping each unique food id to its name and category
-
-  - **Methods:**
-    - `filter_food(category_name)`: Returns a list of food items filtered by the specified category name
-
-
 ### Transaction
 - **Attributes:**
   - `transaction_id`: Unique identifier for the transaction
@@ -142,6 +133,18 @@ end note
   - `remove_item(food)`: Removes a food item from the transaction
   - `calculate_total_cost()`: Computes and returns the total cost of all items
   - `get_transaction_details()`: Returns formatted transaction information
+
+
+### Menu
+  - **Attributes:**
+    - all_items: List<Food>        # full inventory
+    - categories: List<ItemCategory>
+
+  - **Methods**
+    - get_all_items(): List<Food>
+    - get_items_by_category(category: ItemCategory): List<Food>
+    - add_item(food: Food): void
+
 
 ## Relationships
 
