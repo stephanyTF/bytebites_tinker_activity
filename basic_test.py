@@ -1,6 +1,6 @@
 '''temp test file for models.py'''
 
-from models import Customer, Food, ItemCategory, Transaction
+from models import Customer, Food, ItemCategory, Transaction, Menu
 
 
 
@@ -40,3 +40,24 @@ transaction3.add_item(food3)
 print(f" \n Third Case: \n")
 print(" "* 5 + transaction3.get_transaction_details())
 print(f" \n")
+
+
+#Fourth Case: test Menu Item Category Management
+itemCat4 = ItemCategory(4, "Salads")
+food4 = Food(4, "Caesar Salad", 7.99, itemCat4, 4.2)
+food5 = Food(5, "Angus Beef Steak", 21.99, itemCat1, 4.3)
+menu = Menu()
+
+lst_of_categories = [food1, food2, food3, food4, food5]
+for food in lst_of_categories:
+    menu.add_food_item(food)
+
+print(f" \n Fourth Case: \n")
+print(" "* 5 + "List All Food Items in Menu:")   
+for food in menu.food_items:
+    print(" "* 10 + food.get_details())
+
+print(f" \n Fifth Case: \n")
+print(" "* 5 + "Foods in 'Main Course' Category:")
+for food in menu.get_foods_by_category("Main Course"):
+    print(" "* 10 + food.get_details())
