@@ -11,7 +11,8 @@ class Customer:
     
     def add_transaction(self, transaction):
         """Adds a transaction to the customer's purchase history."""
-        self.purchase_history.append(transaction)
+        if transaction.items:
+            self.purchase_history.append(transaction)
     
     def get_purchase_history(self):
         """Returns all transactions for this customer."""
@@ -80,8 +81,9 @@ class Menu:
         self.food_items = []
     
     def add_food_item(self, food):
-        """Adds a food item to the menu."""
-        self.food_items.append(food)
+        """Adds a food item to the menu only if it's not already present."""
+        if food not in self.food_items:
+            self.food_items.append(food)
     
     
     def get_foods_by_category(self, category_name):
