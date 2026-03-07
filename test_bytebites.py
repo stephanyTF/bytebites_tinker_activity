@@ -162,7 +162,6 @@ def test_empty_transaction_not_in_history():
     
     # Only add non-empty transactions to history
     transaction7_filled = Transaction(8, customer5)
-    #transaction7_filled.add_item(food1) 
     customer5.add_transaction(transaction7_filled)
     
     assert len(customer5.purchase_history) == 0, f"Expected purchase history to be empty, but got {len(customer5.purchase_history)}"
