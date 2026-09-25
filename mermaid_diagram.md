@@ -15,12 +15,11 @@ classDiagram
     class Menu {
         -List~FoodItem~ items
         +filterByCategory(category) List~FoodItem~
-        +add_item(item)
+        
     }
 
     class Order {
         -List~FoodItem~ selectedItems
-        +add_item(item)
         +computeTotalCost() double
     }
 
