@@ -30,8 +30,6 @@ class Menu:
         filtered_items = [item for item in self.items if item.category == category]
         return filtered_items
 
-    def get_item_names(self) -> list[str]:
-        return [item.name for item in self.items]
 
 
 class Order:
@@ -41,7 +39,7 @@ class Order:
 
     def add_item(self, item: FoodItem) -> None:
         #Check if item is in the menu before adding it to the order
-        if item in self.menu.get_item_names():
+        if item in self.menu.items:
             self.selected_items.append(item)
 
     def compute_total_cost(self) -> float:
