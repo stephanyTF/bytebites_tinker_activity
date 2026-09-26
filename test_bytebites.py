@@ -30,7 +30,9 @@ class TestOrderBehavior(unittest.TestCase):
         self.assertEqual(order.compute_total_cost(), 0)
 
     def test_add_item_not_in_menu(self):
-        # Edge case: current behavior accepts items not on the menu (no validation yet)
+        # Edge case: adding an item that isn't on the menu should be rejected,
+        # leaving the order empty. NOTE: this will currently FAIL, since
+        # Order.add_item has no menu validation yet.
         burger = FoodItem("Burger", 10.00, "Main Course", 4.0)
         soda = FoodItem("Soda", 5.00, "Beverage", 3.0)
         menu = Menu([burger, soda])
@@ -41,8 +43,8 @@ class TestOrderBehavior(unittest.TestCase):
         order = Order()
         order.add_item(mystery_item)
 
-        self.assertIn(mystery_item, order.selected_items)
-        self.assertEqual(order.compute_total_cost(), 99.00)
+        self.assertEqual(order.selected_items, [])
+        self.assertEqual(order.compute_total_cost(), 0)
 
 
 if __name__ == "__main__":
