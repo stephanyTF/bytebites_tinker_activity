@@ -10,7 +10,7 @@ class TestOrderBehavior(unittest.TestCase):
         soda = FoodItem("Soda", 5.00, "Beverage", 3.0)
         menu = Menu([burger, soda])
 
-        order = Order()
+        order = Order(Menu=menu)
         order.add_item(burger)
         order.add_item(soda)
 
@@ -40,7 +40,7 @@ class TestOrderBehavior(unittest.TestCase):
         mystery_item = FoodItem("Mystery Item", 99.00, "Unknown", 0.0)
         self.assertNotIn(mystery_item, menu.items)
 
-        order = Order()
+        order = Order(Menu=menu)
         order.add_item(mystery_item)
 
         self.assertEqual(order.selected_items, [])

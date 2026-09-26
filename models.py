@@ -30,13 +30,19 @@ class Menu:
         filtered_items = [item for item in self.items if item.category == category]
         return filtered_items
 
+    def get_item_names(self) -> list[str]:
+        return [item.name for item in self.items]
+
 
 class Order:
-    def __init__(self, selected_items: Optional[list[FoodItem]] = None):
+    def __init__(self, selected_items: Optional[list[FoodItem]] = None, Menu: Optional[Menu] = None):
         self.selected_items = selected_items if selected_items is not None else []
+        self.menu = Menu
 
     def add_item(self, item: FoodItem) -> None:
-        self.selected_items.append(item)
+        #Check if item is in the menu before adding it to the order
+        if item in self.menu.get_item_names():
+            self.selected_items.append(item)
 
     def compute_total_cost(self) -> float:
         return sum(item.price for item in self.selected_items)
@@ -72,7 +78,7 @@ if __name__ == "__main__":
         print(f"- {item.name}: ${item.price}")
 
     # Create an order and add selected items
-    order = Order()
+    order = Order(Menu=menu)
     order.add_item(pizza)
     order.add_item(salad)
 
